@@ -47,42 +47,74 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
 4-bit Count Down Counter
 ### Procedure
 /* write all the steps invloved */
+1. Create a new project in QuartusII software.
+
+2. Name the project as uc for upcounter and dc for down counter.
+
+3. Create a new verilog hdl file in the project file.
+
+4. Name the module as dc and uc for down counter and up counter.
+
+5. Within the module declare input and output variables.
+
+6. Create a loop using if-else with condition parameter as reset value.
+
+7. End the loop.
+
+8. End the module.
 
 
 
 ### PROGRAM 
 /*
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: DARSHAN S  
+RegisterNumber: 22008842
 */
+/*
+FOR UP COUNTER:
+module exup(input CLK,input reset,output[0:3]counter);
+reg[0:3]counter_up;
+always@(posedge CLK or posedge reset)
+begin 
+if(reset)
+counter_up<=4'd0;
+else
+counter_up<=counter_up+4'd1;
+end
+assign counter=counter_up;
+endmodule
 
+FOR DOWN COUNTER:
+module exdown(input CLK,input reset,output[0:3]counter);
+reg[0:3]counter_down;
+always@(posedge CLK or posedge reset)
+begin 
+if(reset)
+counter_down<=4'd0;
+else
+counter_down<=counter_down-4'd1;
+end
+assign counter=counter_down;
+endmodule
+*/
+### RTL LOGIC UP COUNTER AND DOWN COUNTER
+UP COUNTER:
+![image](https://user-images.githubusercontent.com/115534676/213599878-e84d52b8-9f1c-4dfa-aba0-21a26d200a7c.png)
+DOWN COUNTER:
+![image](https://user-images.githubusercontent.com/115534676/213599920-43a9db7b-192e-4e4f-8a18-0a416d546149.png)
+ 
+### TIMING DIGRAMS FOR COUNTER 
+UP COUNTER:
+![image](https://user-images.githubusercontent.com/115534676/213600007-94ccac20-12b7-493e-8fd0-8ad07b49fd13.png)
+DOWN COUNTER:
+![image](https://user-images.githubusercontent.com/115534676/213600037-b7738262-21af-47f7-a153-c66ab4b455f5.png)
+ 
+### TRUTH TABLE :
+UP COUNTER:
+![image](https://user-images.githubusercontent.com/115534676/213600107-77fdc291-83be-4d3f-8e02-c513dec8266c.png)
+DOWN COUNTER:
+![image](https://user-images.githubusercontent.com/115534676/213600139-571512a3-d5c5-4d2e-b87e-4c53d96a4d70.png)
 
-
-
-
-
-### RTL LOGIC UP COUNTER AND DOWN COUNTER  
-
-
-
-
-
-
-
-
-
-### TIMING DIGRAMS FOR COUNTER  
-
-
-
-
-
-### TRUTH TABLE 
-
-
-
-
-
-
-### RESULTS 
+### RESULTS:
+The 4 bit up and down counters has been implemented and validated the functionality.
